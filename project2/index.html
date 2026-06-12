@@ -1,3 +1,37 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to DecodeLabs — Mission Accomplished</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#0a0c0f;
+  color:#e0e0d0;
+  font-family:'Share Tech Mono',monospace;
+  min-height:100vh;
+  overflow-x:hidden;
+  overflow-y:scroll;
+  position:relative;
+  padding:2rem 0;
+}
+
+/* animated grid bg */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,180,0,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,180,0,0.04) 1px,transparent 1px);
+  background-size:50px 50px;
+  animation:gridmove 20s linear infinite;
+}
+@keyframes gridmove{
+  from{transform:translateY(0)}
+  to{transform:translateY(50px)}
 }
 
 /* scan line */
@@ -20,6 +54,7 @@ body::after{
   padding:3rem 2rem;
   max-width:900px;
   width:100%;
+  margin:0 auto;
 }
 
 /* TOP STATUS BAR */
@@ -44,4 +79,227 @@ body::after{
   animation:blink 1.5s ease infinite;
 }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* DECODELABS LOGO TEXT */
+.dl-label{
+  font-size:.7rem;
+  letter-spacing:.5em;
+  text-transform:uppercase;
+  color:#f0b429;
+  margin-bottom:1rem;
+  opacity:.8;
+}
+
+/* MAIN HEADLINE */
+.headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,10vw,7rem);
+  letter-spacing:.05em;
+  line-height:.9;
+  color:#fff;
+  margin-bottom:.5rem;
+  text-shadow:0 0 60px rgba(240,180,41,0.15);
+}
+.headline .gold{color:#f0b429}
+
+.sub-headline{
+  font-size:.85rem;
+  letter-spacing:.25em;
+  color:#5a5a40;
+  text-transform:uppercase;
+  margin-bottom:3rem;
+}
+
+/* MISSION COMPLETE BOX */
+.mission-box{
+  border:1px solid #f0b429;
+  padding:2rem 3rem;
+  margin:0 auto 3rem;
+  max-width:600px;
+  position:relative;
+  background:rgba(240,180,41,0.03);
+}
+.mission-box::before{
+  content:'MISSION STATUS';
+  position:absolute;
+  top:-.6rem;
+  left:50%;
+  transform:translateX(-50%);
+  background:#0a0c0f;
+  padding:0 1rem;
+  font-size:.55rem;
+  letter-spacing:.3em;
+  color:#f0b429;
+}
+.mission-complete{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.5rem;
+  letter-spacing:.15em;
+  color:#f0b429;
+  text-shadow:0 0 20px rgba(240,180,41,0.4);
+}
+.mission-detail{
+  font-size:.7rem;
+  letter-spacing:.15em;
+  color:#6a6a50;
+  margin-top:.5rem;
+}
+
+/* CHECKLIST */
+.checklist{
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+  margin:0 auto 3rem;
+  max-width:500px;
+  text-align:left;
+}
+.check-item{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  color:#8a8a70;
+  padding:.5rem .8rem;
+  border-left:2px solid #1a1a10;
+  transition:border-color .3s;
+}
+.check-item:hover{border-left-color:#f0b429;color:#d0d0b0}
+.check-icon{
+  color:#f0b429;
+  font-size:.9rem;
+  flex-shrink:0;
+}
+
+/* SERVER INFO */
+.server-info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:#1a1a10;
+  border:1px solid #1a1a10;
+  margin:0 auto 3rem;
+  max-width:600px;
+}
+.si-cell{
+  background:#0a0c0f;
+  padding:1.2rem;
+  text-align:center;
+}
+.si-label{
+  font-size:.52rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#4a4a30;
+  margin-bottom:.4rem;
+}
+.si-value{
+  font-size:.75rem;
+  color:#f0b429;
+  letter-spacing:.1em;
+}
+
+/* BOTTOM BAR */
+.bottom-bar{
+  font-size:.6rem;
+  letter-spacing:.2em;
+  color:#3a3a28;
+  border-top:1px solid #1a1a10;
+  padding-top:1.5rem;
+  text-transform:uppercase;
+}
+.bottom-bar span{color:#f0b429;opacity:.6}
+
+/* CORNER DECORATIONS */
+.corner{position:fixed;width:60px;height:60px;z-index:5}
+.corner-tl{top:20px;left:20px;border-top:1px solid #f0b42940;border-left:1px solid #f0b42940}
+.corner-tr{top:20px;right:20px;border-top:1px solid #f0b42940;border-right:1px solid #f0b42940}
+.corner-bl{bottom:20px;left:20px;border-bottom:1px solid #f0b42940;border-left:1px solid #f0b42940}
+.corner-br{bottom:20px;right:20px;border-bottom:1px solid #f0b42940;border-right:1px solid #f0b42940}
+
+@media(max-width:600px){
+  .status-bar{flex-direction:column;gap:.5rem;text-align:center}
+  .server-info{grid-template-columns:1fr}
+  .mission-box{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="corner corner-tl"></div>
+<div class="corner corner-tr"></div>
+<div class="corner corner-bl"></div>
+<div class="corner corner-br"></div>
+
+<div class="container">
+
+  <div class="status-bar">
+    <span><span class="status-dot"></span>SERVER ONLINE</span>
+    <span>DECODELABS · BATCH 2026 · PROJECT 2</span>
+    <span>NGINX · PORT 80 · ACTIVE</span>
+  </div>
+
+  <div class="dl-label">DecodeLabs Cloud Computing Internship</div>
+
+  <h1 class="headline">
+    WELCOME TO<br>
+    <span class="gold">DECODELABS</span>
+  </h1>
+  <p class="sub-headline">The Server Commander — Mission Accomplished</p>
+
+  <div class="mission-box">
+    <div class="mission-complete">✓ MISSION ACCOMPLISHED</div>
+    <div class="mission-detail">
+      Virtual Machine Provisioned · Nginx Deployed · Webpage Live
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="check-item"><span class="check-icon">✓</span> EC2/VM Instance Launched — Amazon Linux 2023 · t2.micro</div>
+    <div class="check-item"><span class="check-icon">✓</span> Security Groups Configured — Port 22 (SSH) · Port 80 (HTTP)</div>
+    <div class="check-item"><span class="check-icon">✓</span> SSH Key Pair Generated — .pem / .ppk Authentication</div>
+    <div class="check-item"><span class="check-icon">✓</span> Server Connected Securely via SSH</div>
+    <div class="check-item"><span class="check-icon">✓</span> Nginx Web Server Installed & Started</div>
+    <div class="check-item"><span class="check-icon">✓</span> Custom Webpage Deployed to /usr/share/nginx/html/</div>
+    <div class="check-item"><span class="check-icon">✓</span> Live URL Accessible via Public IP</div>
+  </div>
+
+  <div class="server-info">
+    <div class="si-cell">
+      <div class="si-label">Web Server</div>
+      <div class="si-value">Nginx</div>
+    </div>
+    <div class="si-cell">
+      <div class="si-label">OS</div>
+      <div class="si-value">Amazon Linux</div>
+    </div>
+    <div class="si-cell">
+      <div class="si-label">Instance</div>
+      <div class="si-value">t2.micro</div>
+    </div>
+    <div class="si-cell">
+      <div class="si-label">Platform</div>
+      <div class="si-value">AWS EC2</div>
+    </div>
+    <div class="si-cell">
+      <div class="si-label">Port</div>
+      <div class="si-value">80 / HTTP</div>
+    </div>
+    <div class="si-cell">
+      <div class="si-label">Auth</div>
+      <div class="si-value">SSH Key Pair</div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    Deployed by <span>Mamoon Azam Khattak</span> ·
+    DecodeLabs Cloud Internship 2026 ·
+    <span>mamoonkhattak758@gmail.com</span>
+  </div>
+
+</div>
+
+</body>
+</html>
 
