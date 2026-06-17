@@ -2,7 +2,7 @@
 
 > Personal portfolio website of Mamoon Azam Khattak — CSE Student at UET Peshawar, Cloud Computing Intern at DecodeLabs, Cyber Security Intern at CodeAlpha, Web Developer Intern at HexSoftwares, and Freelance Web Developer.
 
-🌐 **Live:** [mamoon-azam-khattak.github.io](https://mamoon-azam-khattak.github.io)
+🌐 **Live:** https://mamoon12-tech.github.io/
 
 ---
 
